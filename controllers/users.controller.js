@@ -50,3 +50,19 @@ export const  updateUser = async (req, res) => {
     return res.status(500).json({ message: error.message});  
   }
 };
+
+export const  deleteUser = async (req, res) => {
+  try {  
+    const { id } = req.params;
+
+    const user = await User.findOne({
+      where: { id },
+    })
+    
+    await user.destroy(); 
+    res.status(200).json(user) 
+
+  } catch (error) {
+    return res.status(500).json({ message: error.message});  
+  }
+};
