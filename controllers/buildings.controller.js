@@ -2,8 +2,7 @@ import { Building } from '../models/Building.js'
 import { Plan } from '../models/Plan.js';
 
 export const  getBuildings = async (req, res) => {
-  try {
-    // const buildings = await Building.findAll();
+  try {  
     const buildings = await Building.findAll({ include: Plan });
 
     res.status(200).json(buildings);    

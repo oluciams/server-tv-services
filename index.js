@@ -1,8 +1,5 @@
 import app from './app.js';
 import { sequelize } from './database/database.js';
-// import  './models/User.js';
-// import  './models/Building.js';
-// import './models/Plan.js'
 
 async function conectionPort() {
   try {
